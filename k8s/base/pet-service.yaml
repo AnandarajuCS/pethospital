@@ -11,7 +11,6 @@ spec:
     - port: 3000
       targetPort: 3000
   type: ClusterIP
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -30,7 +29,7 @@ spec:
     spec:
       containers:
         - name: pet-service
-          image: 304930966996.dkr.ecr.us-west-2.amazonaws.com/pet-hospital-pet-service:5a87a15292bd85d2a951a0b1d7220adaf1887e95
+          image: 622037664315.dkr.ecr.us-west-2.amazonaws.com/pet-hospital-pet-service:8fc4afe692f19f1dabe062c5a559546cafe2f950
           ports:
             - containerPort: 3000
           resources:
@@ -55,7 +54,6 @@ spec:
           imagePullPolicy: Always
       imagePullSecrets:
         - name: ecr-registry-secret
----
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
